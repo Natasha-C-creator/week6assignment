@@ -1,5 +1,6 @@
 import "./App.css";
 import { data } from "./lib/data";
+import { cookieUpgrades } from "./lib/cookieUpgrades";
 import Header from "./Components/Header.jsx";
 import Section from "./Components/Section.jsx";
 import ShopSection from "./Components/ShopSection.jsx";
@@ -43,19 +44,20 @@ export default function App() {
 
             {console.log("Checking if count >= 10:", count >= 10)}
 
-            {/* {count >= 10 && (
-              <>
-              <ViewShopButton />
-              <ShopSection
-                key={dataItem.id + "-shop"}
-                title={dataItem.shopTitle}
-                content={dataItem.shopContent}
-              >
-                <LargeOvenButton buyALargeOven={buyALargeOven} />
-                <TeamButton buyATeam={buyATeam} />
-              </ShopSection>
-              </>
-            )} */}
+            {count >= 10 && (
+              <div key={cookieUpgrades.id}>
+                <ViewShopButton />
+                <ResetButton resetCookieCount={resetCookieCount} />
+                <ShopSection
+                  key={cookieUpgrades.id + "-shop"}
+                  title={cookieUpgrades.Title}
+                  content={cookieUpgrades.Content}
+                >
+                  <LargeOvenButton buyALargeOven={buyALargeOven} />
+                  <TeamButton buyATeam={buyATeam} />
+                </ShopSection>
+              </div>
+            )}
           </div>
         );
       })}
