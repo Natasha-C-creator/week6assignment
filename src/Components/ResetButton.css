@@ -1,0 +1,22 @@
+.ResetButton {
+  background-color: #935b5b;
+  border: rgb(255, 255, 255);
+  border-radius: 12px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 160px;
+  cursor: pointer;
+  margin-left: 10px;
+  }
+
+.ResetButton:hover {
+  background-color: #431010;
+  color: white;
+  cursor: pointer;
+  transform: scale(1.02) perspective(0px);
+  box-shadow: 0 10px 10px rgba(101, 78, 78, 0.7);
+}
