@@ -8,51 +8,15 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Counter from "./Components/BuyCookieButton.jsx";
 import ViewShopButton from "./Components/ViewShopButton.jsx";
-// import LargeOvenButton from "./Components/Shop Items/LargeOvenButton.jsx"
-// import TeamButton from "./Components/Shop Items/TeamButton.jsx";
 
 export default function App() {
   const [count, setCount] = useState(0);
-  const [cps, setCPS] = useState(1);
-  return <div>{cps}</div>;
-}
-
-  useEffect(() => {
-    const myInterval = setInterval(() => {
-      setCookies((count) => {
-        count + cps;
-      });
-    }, 1000);
-    return () => {
-      return currentCookies + {cps};
-      clearInterval(myInterval);
-    };
-  }, [cps]);
-
-  // Not being used:
-  // import Button from "./Components/Button.jsx";
-  // import ButtonInline from "./Components/ButtonInline.jsx";
-  // import ReusableButton from "./Components/ReusableButton.jsx";
-  // import CountButton from "./Components/CountButton.jsx";
-  // import ListOfItems from "./Components/ListOfItems.jsx";
-  // import TimerClean from "./Components/TimerClean.jsx";
-
-  // function handleFirstClick() {
-  //   console.log("You clicked on the first button");
-  // }
-  // function handleSecondClick() {
-  //   console.log("You clicked on the second button");
-  // }
-  // function handleThirdClick() {
-  //   console.log("You clicked on the third button");
-  // }
-  // function CountButton() {}
-  //   console.log("You added one");
-  // }
+  // const [cps, setCPS] = useState(0);
+ 
   function resetCookieCount() {
     console.log("Reset button was clicked - count was reset to 0.");
     setCount(0);
-      }
+  }
 
   return (
     <>
@@ -76,8 +40,24 @@ export default function App() {
 }
 
 
+
+//MANNY'S WALKING SKELETON:
+// export default function App() {
+  //I need TWO state variables to store two values --> one state to track the number of cookies, and one state to tracK the cookies per second (cps)
+
+
   //this block of code is very useful. What does it do?
-  
+  // useEffect(() => {
+  //   const myInterval = setInterval(() => {
+  //     setCookies((count) => {
+  //       count + cps;
+  //     });
+  //   }, 1000);
+  //   return () => {
+  //     return currentCookies + {cps};
+  //     clearInterval(myInterval);
+  //   };
+  // }, [cps]);
 
   //we need some logic for the shop upgrades (cookies go down, cps goes up)
   //write your logic here!
@@ -91,3 +71,16 @@ export default function App() {
 //     </>
 //   );
 // }
+
+// function handleFirstClick() {
+  //   console.log("You clicked on the first button");
+  // }
+  // function handleSecondClick() {
+  //   console.log("You clicked on the second button");
+  // }
+  // function handleThirdClick() {
+  //   console.log("You clicked on the third button");
+  // }
+  // function CountButton() {}
+  //   console.log("You added one");
+  // }
