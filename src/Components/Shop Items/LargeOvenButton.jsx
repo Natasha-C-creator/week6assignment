@@ -1,9 +1,7 @@
-import "./Components/ShopItems/LargeOvenButton.css";
+import "./LargeOvenButton.css";
 
-export default function LargeOvenButton() {
-  return (
-    <button>
-      Buy Large Oven
-    </button>
-  );
-}
+export default function LargeOvenButton({ buyALargeOven }) {
+    return (
+      <button onClick={buyALargeOven} className="BuyATeam">Buy A Large Oven</button>
+    );
+  }

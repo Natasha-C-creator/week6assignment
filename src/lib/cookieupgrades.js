@@ -1,4 +1,4 @@
-export const data = [
+export const cookieUpgrade = [
     {
         title: "Large Oven",
         content: "Large oven to bake twice as many cookies"
