@@ -5,14 +5,29 @@ import Section from "./Components/Section.jsx";
 import Footer from "./Components/Footer.jsx";
 import ResetButton from "./Components/ResetButton.jsx";
 import { useState } from "react";
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import Counter from "./Components/BuyCookieButton.jsx";
 import ViewShopButton from "./Components/ViewShopButton.jsx";
 // import LargeOvenButton from "./Components/Shop Items/LargeOvenButton.jsx"
 // import TeamButton from "./Components/Shop Items/TeamButton.jsx";
 
-export default function App(props) {
+export default function App() {
   const [count, setCount] = useState(0);
+  const [cps, setCPS] = useState(1);
+  return <div>{cps}</div>;
+}
+
+  useEffect(() => {
+    const myInterval = setInterval(() => {
+      setCookies((count) => {
+        count + cps;
+      });
+    }, 1000);
+    return () => {
+      return currentCookies + {cps};
+      clearInterval(myInterval);
+    };
+  }, [cps]);
 
   // Not being used:
   // import Button from "./Components/Button.jsx";
@@ -37,7 +52,7 @@ export default function App(props) {
   function resetCookieCount() {
     console.log("Reset button was clicked - count was reset to 0.");
     setCount(0);
-  }
+      }
 
   return (
     <>
@@ -59,3 +74,20 @@ export default function App(props) {
     </>
   );
 }
+
+
+  //this block of code is very useful. What does it do?
+  
+
+  //we need some logic for the shop upgrades (cookies go down, cps goes up)
+  //write your logic here!
+
+//   return (
+//     <>
+//       <h1>Cookie Clicker</h1>
+//       {/* we need an element to interact with the user */}
+//       {/* we need elements to render our cookies and cps for the user to see the values displayed */}
+//       {/* we need the shop upgrades rendered here! */}
+//     </>
+//   );
+// }
