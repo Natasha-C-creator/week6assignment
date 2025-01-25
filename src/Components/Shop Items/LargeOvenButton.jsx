@@ -2,6 +2,6 @@ import "./LargeOvenButton.css";
 
 export default function LargeOvenButton({ buyALargeOven }) {
     return (
-      <button onClick={buyALargeOven} className="largeovenbutton">Buy a Large Oven</button>
+      <button onClick={buyALargeOven} className="largeovenbutton">Buy Large Oven (+5/click)</button>
     );
   }
