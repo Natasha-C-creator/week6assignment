@@ -13,7 +13,7 @@ export default function Counter({ count, setCount }) {
           setCount(count + 1);
         }}
       >
-        Buy 1 Cookie
+        Buy 1 Cookie 🍪
       </button>
     </>
   );

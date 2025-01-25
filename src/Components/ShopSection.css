@@ -36,3 +36,10 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   gap: 1px;
 }
+
+.button-container {
+  display: flex;
+  gap: 20px;
+  justify-content: left;
+  align-items: left;
+}

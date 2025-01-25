@@ -6,7 +6,7 @@ import Section from "./Components/Section.jsx";
 import ShopSection from "./Components/ShopSection.jsx";
 import Footer from "./Components/Footer.jsx";
 import ResetButton from "./Components/ResetButton.jsx";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Counter from "./Components/BuyCookieButton.jsx";
 import ViewShopButton from "./Components/ViewShopButton.jsx";
 import LargeOvenButton from "./Components/Shop Items/LargeOvenButton.jsx";
@@ -15,6 +15,7 @@ import TeamButton from "./Components/Shop Items/TeamButton.jsx";
 export default function App() {
   const [count, setCount] = useState(0);
   // const [cps, setCPS] = useState(0);
+  const [showShop, setShowShop] = useState(false);
 
   function resetCookieCount() {
     console.log("Reset button was clicked - count was reset to 0.");
@@ -31,6 +32,14 @@ export default function App() {
     setCount(count + 10);
   }
 
+  const shopSectionRef = useRef(null);
+  const handleViewShopClick = () => {
+    setShowShop(true);
+    if (shopSectionRef.current) {
+      shopSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <Header />
@@ -39,24 +48,30 @@ export default function App() {
           <div key={dataItem.id}>
             <Section title={dataItem.title} content={dataItem.content}>
               <Counter count={count} setCount={setCount} />
-              <ResetButton resetCookieCount={resetCookieCount} />
+
+              <div className="button-container">
+                <ResetButton resetCookieCount={resetCookieCount} />
+                {count >= 2 && <ViewShopButton onClick={handleViewShopClick} />}
+              </div>
             </Section>
 
             {console.log("Checking if count >= 10:", count >= 10)}
 
-            {count >= 10 && (
-              <div key={cookieUpgrades.id}>
-                <ViewShopButton />
-                <ResetButton resetCookieCount={resetCookieCount} />
-                <ShopSection
-                  key={cookieUpgrades.id + "-shop"}
-                  title={cookieUpgrades.Title}
-                  content={cookieUpgrades.Content}
-                >
-                  <LargeOvenButton buyALargeOven={buyALargeOven} />
-                  <TeamButton buyATeam={buyATeam} />
-                </ShopSection>
-              </div>
+            {count >= 2 && (
+              <>
+                {/* // <div key={cookieUpgrades.id}> */}
+                <ViewShopButton onClick={handleViewShopClick} />
+                {showShop && (
+                  <ShopSection
+                    key={dataItem.id + "-shop"}
+                    title={cookieUpgrades.Title}
+                    content={cookieUpgrades.Content}
+                  >
+                    <LargeOvenButton buyALargeOven={buyALargeOven} />
+                    <TeamButton buyATeam={buyATeam} />
+                  </ShopSection>
+                )}
+              </>
             )}
           </div>
         );

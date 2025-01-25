@@ -1,17 +1,10 @@
 import "./ViewShopButton.css";
+import "./ShopSection.jsx";
 
-export default function ViewShopButton() {
+export default function ViewShopButton({ onClick }) {
   return (
-    <button
-      className="viewshopbutton"
-      onClick={() => {
-        window.scroll({
-          top: 0,
-          behaviour: "smooth",
-        });
-      }}
-    >
-      View Shop
+    <button className="viewshopbutton" onClick={onClick}>
+      View Shop 🛒
     </button>
   );
 }
