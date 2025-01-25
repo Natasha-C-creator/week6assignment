@@ -3,7 +3,7 @@ import "./TeamButton.css";
 export default function ResetButton({ buyATeam }) {
   return (
     <button onClick={buyATeam} className="BuyATeam">
-      Buy A Team
+      Buy a Chef
     </button>
   );
 }

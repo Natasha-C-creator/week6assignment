@@ -24,12 +24,12 @@ export default function App() {
 
   function buyATeam() {
     console.log("Button to Buy A Team was clicked.");
-    setCount(count + 5);
+    setCount(count + 10);
   }
 
   function buyALargeOven() {
     console.log("Button to Buy A Large Oven was clicked.");
-    setCount(count + 10);
+    setCount(count + 5);
   }
 
   const shopSectionRef = useRef(null);
