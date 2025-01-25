@@ -1,7 +1,4 @@
-export const cookieUpgrades = [
-{
-    Title: "Cookie Shop",
-    Content: "Choose from the following options to help make more cookies!"
-}
-  ];
-  
+export const cookieUpgrades = {
+  title: "Cookie Shop",
+  content: "Choose from the following options to help make more cookies!",
+};

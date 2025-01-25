@@ -43,39 +43,30 @@ export default function App() {
   return (
     <>
       <Header />
-      {data.map((dataItem) => {
-        return (
-          <div key={dataItem.id}>
-            <Section title={dataItem.title} content={dataItem.content}>
-              <Counter count={count} setCount={setCount} />
-
-              <div className="button-container">
-                <ResetButton resetCookieCount={resetCookieCount} />
-                {count >= 2 && <ViewShopButton onClick={handleViewShopClick} />}
-              </div>
-            </Section>
-
-            {console.log("Checking if count >= 10:", count >= 10)}
-
-            {count >= 2 && (
-              <>
-                {/* // <div key={cookieUpgrades.id}> */}
-                <ViewShopButton onClick={handleViewShopClick} />
-                {showShop && (
-                  <ShopSection
-                    key={dataItem.id + "-shop"}
-                    title={cookieUpgrades.Title}
-                    content={cookieUpgrades.Content}
-                  >
-                    <LargeOvenButton buyALargeOven={buyALargeOven} />
-                    <TeamButton buyATeam={buyATeam} />
-                  </ShopSection>
-                )}
-              </>
+      {/* {data.map((dataItem) => {
+        return ( */}
+      <div key={data[0].id}>
+        <Section title={data[0].title} content={data[0].content}>
+          <Counter count={count} setCount={setCount} />
+          <div className="button-container">
+            <ResetButton resetCookieCount={resetCookieCount} />
+            {count >= 2 && !showShop && (
+              <ViewShopButton onClick={handleViewShopClick} />
             )}
           </div>
-        );
-      })}
+        </Section>
+
+        {showShop && (
+          <ShopSection
+            ref={shopSectionRef}
+            title={cookieUpgrades.title}
+            content={cookieUpgrades.content}
+          >
+            <LargeOvenButton buyALargeOven={buyALargeOven} />
+            <TeamButton buyATeam={buyATeam} />
+          </ShopSection>
+        )}
+      </div>
       <Footer />
     </>
   );
