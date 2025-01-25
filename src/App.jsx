@@ -20,6 +20,7 @@ export default function App() {
   function resetCookieCount() {
     console.log("Reset button was clicked - count was reset to 0.");
     setCount(0);
+    setShowShop(false);
   }
 
   function buyATeam() {
@@ -43,8 +44,6 @@ export default function App() {
   return (
     <>
       <Header />
-      {/* {data.map((dataItem) => {
-        return ( */}
       <div key={data[0].id}>
         <Section title={data[0].title} content={data[0].content}>
           <Counter count={count} setCount={setCount} />
