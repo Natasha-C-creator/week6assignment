@@ -34,10 +34,14 @@ export default function App() {
   }
 
   const shopSectionRef = useRef(null);
+
   const handleViewShopClick = () => {
     setShowShop(true);
     if (shopSectionRef.current) {
-      shopSectionRef.current.scrollIntoView({ behavior: "smooth" });
+      shopSectionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   };
 
