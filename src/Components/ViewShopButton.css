@@ -1,5 +1,5 @@
 .viewshopbutton {
-  background-color: #22410f;
+  background-color: #0d1905;
   width: 170px;
   border: none;
   border-radius: 12px;
@@ -17,5 +17,5 @@
   background-color: #484e43;
   color: white;
   transform: scale(1.02) perspective(0px);
-  box-shadow: 0 10px 10px rgba(66, 87, 70, 0.7);
+  box-shadow: 0 10px 10px rgba(0, 7, 2, 0.7);
 }

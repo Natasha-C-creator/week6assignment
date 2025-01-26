@@ -5,3 +5,32 @@
   /* background-size: 1800px 1400px; */
   background-size: cover;
 }
+
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .Section {
+    display: block;
+    padding: 10px;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .counter {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+

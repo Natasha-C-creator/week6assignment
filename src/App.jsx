@@ -58,7 +58,7 @@ export default function App() {
           <Counter count={count} setCount={setCount} />
           <div className="button-container">
             <ResetButton resetCookieCount={resetCookieCount} />
-            {count >= 2 && !showShop && (
+            {count >= 10 && !showShop && (
               <ViewShopButton onClick={handleViewShopClick} />
             )}
           </div>
