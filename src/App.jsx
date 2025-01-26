@@ -14,7 +14,7 @@ import TeamButton from "./Components/Shop Items/TeamButton.jsx";
 
 export default function App() {
   const [count, setCount] = useState(0);
-  // const [cps, setCPS] = useState(0);
+  const [cps, setCPS] = useState(0);
   const [showShop, setShowShop] = useState(false);
 
   function resetCookieCount() {
@@ -40,6 +40,15 @@ export default function App() {
       shopSectionRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  useEffect(() => {
+    const myInterval = setInterval(() => {
+      setCount((currentCookies) => currentCookies + 1);
+    }, 1000);
+    return () => {
+      clearInterval(myInterval);
+    };
+  }, []);
 
   return (
     <>
